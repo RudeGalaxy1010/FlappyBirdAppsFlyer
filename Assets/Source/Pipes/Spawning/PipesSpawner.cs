@@ -35,6 +35,8 @@ public class PipesSpawner : MonoBehaviour
 
     private void CreatePipes()
     {
-        Debug.Log("Pipes created");
+        PipeWall pipeWall = Instantiate(_pipeWallPrefab, _spawnPoint.position, Quaternion.identity);
+        float windowSize = Random.Range(_spawnSettings.MinWindowSize, _spawnSettings.MaxWindowSize);
+        pipeWall.Construct(windowSize, _moveSettings.Speed);
     }
 }
