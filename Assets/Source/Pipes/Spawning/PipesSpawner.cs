@@ -1,7 +1,11 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class PipesSpawner : MonoBehaviour
+public class PipesSpawner : Pauseable
 {
+    public event Action<PipeWall> PipeWallCreated;
+
     [SerializeField] private PipeWall _pipeWallPrefab;
     [SerializeField] private Transform _spawnPoint;
 
@@ -38,5 +42,11 @@ public class PipesSpawner : MonoBehaviour
         PipeWall pipeWall = Instantiate(_pipeWallPrefab, _spawnPoint.position, Quaternion.identity);
         float windowSize = Random.Range(_spawnSettings.MinWindowSize, _spawnSettings.MaxWindowSize);
         pipeWall.Construct(windowSize, _moveSettings.Speed);
+        PipeWallCreated?.Invoke(pipeWall);
+    }
+
+    public override void SetPause(bool isPause)
+    {
+        _isActive = !isPause;
     }
 }
