@@ -5,10 +5,11 @@ using UnityEngine;
 public class DifficultySettings : MonoBehaviour
 {
     public event Action<int> DifficultyIndexChanged;
-    public event Action<Difficulty> DifficultyChanged;
 
     [SerializeField] private TMP_Dropdown _difficultyDropdown;
     [SerializeField] private Difficulty[] _difficulties;
+
+    private int _difficultyIndex;
 
     private void OnEnable()
     {
@@ -29,13 +30,15 @@ public class DifficultySettings : MonoBehaviour
             _difficultyDropdown.options.Add(new TMP_Dropdown.OptionData(_difficulties[i].name));
         }
 
-        // TODO: check if index set
-        _difficultyDropdown.value = difficulty == null ? 0 : difficulty.Value;
+        _difficultyIndex = difficulty == null ? 0 : difficulty.Value;
+        _difficultyDropdown.value = _difficultyIndex;
     }
+
+    public Difficulty Difficulty => _difficulties[_difficultyIndex];
 
     private void OnDifficultyChanged(int value)
     {
-        DifficultyIndexChanged?.Invoke(value);
-        DifficultyChanged?.Invoke(_difficulties[value]);
+        _difficultyIndex = value;
+        DifficultyIndexChanged?.Invoke(_difficultyIndex);
     }
 }

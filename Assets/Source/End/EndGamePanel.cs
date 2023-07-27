@@ -1,3 +1,4 @@
+using IJunior.TypedScenes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ public class EndGamePanel : MonoBehaviour
 {
     [SerializeField] private Button _replayButton;
     [SerializeField] private Button _homeButton;
+    [SerializeField] private GameStarter _gameStarter;
 
     private void OnEnable()
     {
@@ -20,11 +22,11 @@ public class EndGamePanel : MonoBehaviour
 
     private void OnReplayButtonClicked()
     {
-
+        GameScene.Load(_gameStarter.Difficulty);
     }
 
     private void OnHomeButtonClicked()
     {
-
+        MenuScene.Load();
     }
 }

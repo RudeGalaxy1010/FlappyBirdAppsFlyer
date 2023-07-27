@@ -1,15 +1,21 @@
+using IJunior.TypedScenes;
 using UnityEngine;
 
-public class GameStarter : MonoBehaviour
+public class GameStarter : MonoBehaviour, ISceneLoadHandler<Difficulty>
 {
-    [SerializeField] private Difficulty[] _difficulties;
     [SerializeField] private PipesSpawner _pipesSpawner;
 
-    private int _difficultyIndex;
+    private Difficulty _difficulty;
+
+    public void OnSceneLoaded(Difficulty difficulty)
+    {
+        _difficulty = difficulty;
+    }
 
     private void Start()
     {
-        Difficulty difficulty = _difficulties[_difficultyIndex];
-        _pipesSpawner.Construct(difficulty.SpawnSettings, difficulty.MoveSettings);
+        _pipesSpawner.Construct(_difficulty.SpawnSettings, _difficulty.MoveSettings);
     }
+
+    public Difficulty Difficulty => _difficulty;
 }
