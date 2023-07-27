@@ -1097,6 +1097,7 @@ MonoBehaviour:
   _playButton: {fileID: 1085829714}
   _settingsButton: {fileID: 1633416722}
   _settingsPanel: {fileID: 367709026}
+  _difficultySettings: {fileID: 367709028}
 --- !u!1 &751329024
 GameObject:
   m_ObjectHideFlags: 0
