@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public Action JumpButtonPressed;
+    public event Action JumpButtonPressed;
 
     private void Update()
     {

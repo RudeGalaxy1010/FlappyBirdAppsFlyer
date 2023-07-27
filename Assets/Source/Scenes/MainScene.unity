@@ -216,9 +216,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 843503882}
+  - component: {fileID: 843503886}
   - component: {fileID: 843503884}
   - component: {fileID: 843503883}
   - component: {fileID: 843503885}
+  - component: {fileID: 843503887}
+  - component: {fileID: 843503888}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -288,6 +291,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dadfa711af8491847ae6e1a9ce9b7f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &843503886
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843503881}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
+--- !u!114 &843503887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843503881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8580b58d4514add45bbe2924511aaaef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &843503888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843503881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b09612827fa7b4dbd318e5b1c2956f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1828610430
