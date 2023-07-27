@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4725329062877452436}
   - component: {fileID: 4725329062877452439}
   - component: {fileID: 4725329062877452438}
+  - component: {fileID: 2121650193471719372}
+  - component: {fileID: 5035795571605903214}
   m_Layer: 0
   m_Name: PipeWall
   m_TagString: Untagged
@@ -45,7 +47,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -74,9 +76,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 4725329062877452439}
+  _horizontalMove: {fileID: 2121650193471719372}
   _upperPipe: {fileID: 4725329063570610355}
   _bottomPipe: {fileID: 7490778853490409372}
   _pointToAdd: 1
+--- !u!114 &2121650193471719372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4725329062877452437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072643d3d5c143443aa5b1b4e1639828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5035795571605903214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4725329062877452437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24daf0732cbf2f48b6a1c620dbbc363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDistance: 24
 --- !u!1001 &265675988959192920
 PrefabInstance:
   m_ObjectHideFlags: 0
