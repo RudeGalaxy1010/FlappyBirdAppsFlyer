@@ -1,4 +1,5 @@
 using UnityEngine;
+using AppsFlyerSDK;
 
 public class MenuStarter : MonoBehaviour
 {
